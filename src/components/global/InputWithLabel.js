@@ -6,7 +6,7 @@ const Fieldset = styled.fieldset`
     display: flex;
     flex-flow: column;
     flex: 1;
-    max-width: 315px;
+    max-width: ${props => props.width === 'full' ? '100%' : '315px' };
     min-width: 200px;
 
     label {
@@ -27,9 +27,9 @@ const Fieldset = styled.fieldset`
     }
 `;
 
-const InputWithLabel = ({label, id, type, name, handleOnChange}) => {
+const InputWithLabel = ({label, id, type, name, value, handleOnChange, width}) => {
     return (
-        <Fieldset>
+        <Fieldset width={width}>
             <label htmlFor={id}>
                 {label}
             </label>
@@ -37,7 +37,8 @@ const InputWithLabel = ({label, id, type, name, handleOnChange}) => {
                 id={id}
                 type={type}
                 name={name}
-                onChange={(event) => handleOnChange(event)}
+                value={value}
+                onChange={event => handleOnChange(event)}
             />
         </Fieldset>
     )

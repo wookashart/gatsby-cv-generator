@@ -26,16 +26,19 @@ class Panels extends Component {
             telephone: '',
             email: ''
         },
-        photo: ''
+        photo: '',
+        skills: []
     }
 
     getData = personal => this.setState({ personal });
     getPhoto = photo => this.setState({ photo });
+    getSkills = skills => this.setState({ skills });
 
     render () {
         const func = {
             getData: this.getData,
-            getPhoto: this.getPhoto
+            getPhoto: this.getPhoto,
+            getSkills: this.getSkills
         }
 
         return (

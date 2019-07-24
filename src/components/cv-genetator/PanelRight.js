@@ -22,7 +22,14 @@ const Right = () => {
 
                     </div>
                     <div>
-                    <img src={info.photo} alt="" />
+                        <img src={info.photo} alt="" />
+                    </div>
+                    <div>
+                        <ul>
+                            {info.skills.map((skill, index) => (
+                                <li key={index}>{skill}</li>
+                            ))}
+                        </ul>
                     </div>
                 </Section>
             )}
